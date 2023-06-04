@@ -41,3 +41,18 @@
 
 # A,B,C=B,C,A
 # print(f"The swapped values of {A}, {B}, {C} is {B}, {C}, {A}")
+
+#del variable
+# x=20
+# del(x)
+# x=40
+# print(x)
+
+#Findng final price after discount at 100$ margin price
+IP=100
+DP=int(input("Enter your desired Percentage :\n"))
+SP=IP-(DP/100*IP)
+if SP>=80:
+    print(f"After considering your demand for {DP} the Selling price amounts to {SP}$ which we can make.")
+else:
+    print(f"Your Targeted price amounts to {SP} You should lower your percentage or try visiting other shops. Thank you")
