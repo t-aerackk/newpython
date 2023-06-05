@@ -1,28 +1,70 @@
-#We are creating a simple calculator
+# #simple calculator by exception handling
+# def calculator():
+#     while True:
+#         print("Calculator Menu:")
+#         print("1. Addition")
+#         print("2. Subtraction")
+#         print("3. Multiplication")
+#         print("4. Division")
+#         print("5. Exit")
 
-A=float(input("Enetr value of A:\n"))
-B=float(input("Enter value of B:\n"))
-#Addition
-sum=A+B
-print(f"The sum of two numbers is {sum}\n")
+#         try:
+#             choice=int(input("select an operation from 1-5:\n"))
+#             if choice>=5:
+#                 print("No caluclations are made")
+#                 break
 
-#Subtraction
-sub=A-B
-print(f"The sub of two numbers is {sub}\n")
+#             num1=float(input("Enter any number:\n"))
+#             num2=float(input("Enter second number:\n"))
+                       
+#             if choice==1:
+#                 print(f"The sum of {num1} and {num2} is", (num1+num2))
+#         except Exception:
+#             print("Please cooperate")
 
-#Divison
-div=A/B
-print(f"The div of two numbers is {div}\n")
+        
+def calculator():
+    while True:
+        print("Calculator Menu:")
+        print("1. Addition")
+        print("2. Subtraction")
+        print("3. Multiplication")
+        print("4. Division")
+        print("5. Exit")
 
-#modulus
-mod=A%B
-print(f"The mod of two numbers is {mod}\n")
+        try:
+            choice = int(input("Select an operation (1-5): "))
+            if choice >= 5:
+                print("Goodbye!")
+                break
 
-#floor
-floor=A//B
-print(f"The floor div of two numbers is {floor}\n")
+            num1 = float(input("Enter the first number: "))
+            num2 = float(input("Enter the second number: "))
 
-#exponentian
-expo=A**B
-print(f"The exponentiation of two numbers is {expo}\n")
+            if choice == 1:
+                result = num1 + num2
+            elif choice == 2:
+                result = num1 - num2
+            elif choice == 3:
+                result = num1 * num2
+            elif choice == 4:
+                result = num1 / num2
+            else:
+                raise ValueError("Invalid operation!")
 
+            print("Result:", result)
+
+        except ValueError:
+            print("Invalid operation! Please enter a valid operation number.")
+        except ZeroDivisionError:
+            print("Error: Division by zero is not allowed!")
+
+        finally:
+            response = input("Do you want to perform another calculation? (yes/no): ")
+            if response.lower() == "no":
+                print("Goodbye!")
+                break
+
+
+# Test the calculator
+calculator()
